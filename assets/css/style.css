@@ -402,3 +402,129 @@ header nav .search i {
   top: 1px;
 }
 /* End Design */
+
+/* Start Portfolio */
+.portfolio {
+  padding: var(--section-padding) 0;
+}
+
+.portfolio .shuffle {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio .shuffle li a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.portfolio .shuffle li a.active {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.portfolio .shuffle li a:hover {
+  color: #fff;
+  background-color: var(--main-color);
+}
+
+.portfolio .imgs-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.portfolio .imgs-container .box {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .portfolio .imgs-container .box {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 1199px) {
+  .portfolio .imgs-container .box {
+    flex-basis: 25%;
+  }
+}
+
+.portfolio .imgs-container .box::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  left: 50%;
+  top: -50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+.portfolio .imgs-container .box::after {
+  content: "+";
+  position: absolute;
+  font-size: 40px;
+  color: #fff;
+  left: 50%;
+  top: -50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+.portfolio .imgs-container .box:hover::before,
+.portfolio .imgs-container .box:hover::after {
+  z-index: 2;
+  top: 50%;
+}
+
+.portfolio .imgs-container .box:hover .caption {
+  bottom: 0;
+}
+
+.portfolio .imgs-container .box:hover img {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.portfolio .imgs-container .box img {
+  max-width: 100%;
+  transition: 0.3s;
+}
+
+.portfolio .imgs-container .box .caption {
+  position: absolute;
+  padding: 20px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  bottom: -100px;
+  transition: 0.3s;
+}
+
+.portfolio .imgs-container .box .caption h4 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.portfolio .imgs-container .box .caption p {
+  color: var(--main-color);
+}
+
+.portfolio button.more {
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 20px;
+  text-transform: uppercase;
+  border: none;
+}
+/* End Portfolio */
